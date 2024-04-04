@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+
+
+
+@layer components{
+    .container {
+        @apply mx-auto w-full px-3 sm:max-w-[600px] md:max-w-[740px] lg:max-w-[990px] xl:max-w-[1216px] 2xl:max-w-[1366px]
+    }
+
+   
+}
+
+
+
+
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    --scroll-speed: 5s
+}
+section{
+   height: 100vh;
+   scroll-snap-align: center;
+   --scroll-speed: 5s
+   overflow-y: scroll;
+   /* color:lightgray */
+}
+
