@@ -28,7 +28,7 @@ const Sidebar = () => {
     <motion.div
       variants={variants}
       animate={open ? "open" : "closed"}
-      className="fixed left-0 top-0 flex h-full w-[400px] flex-col bg-white  "
+      className="fixed left-0 top-0 flex h-full w-[400px] flex-col z-50 bg-white  "
     >
       <motion.div
         variants={variants}

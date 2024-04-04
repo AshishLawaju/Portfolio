@@ -41,7 +41,7 @@ const sliderVarient = {
 const Hero = () => {
   return (
     <div
-      className="container relative overflow-hidden border-2 border-white"
+      className="container relative overflow-hidden "
       style={{
         height: "calc(100vh - 100px)",
         marginBottom: "-100px",
