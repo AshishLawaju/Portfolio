@@ -21,13 +21,15 @@
 html{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    --scroll-speed: 5s
+    --scroll-speed:15s
 }
 section{
    height: 100vh;
    scroll-snap-align: center;
-   --scroll-speed: 5s
+   --scroll-speed: 15s
    overflow-y: scroll;
-   /* color:lightgray */
+   
 }
+
+
 
