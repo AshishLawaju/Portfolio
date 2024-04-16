@@ -1,16 +1,46 @@
-import { motion } from "framer-motion";
+import {  motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const variants = {
+  initial: {
+    x: -500,
+    y: 100,
+    opacity: 0,
+  },
+
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
 const Services = () => {
+  const ref = useRef();
+
+  const isInView = useInView(ref, { margin: "-100px" });
   return (
     <motion.div
+      ref={ref}
+      variants={variants}
+      initial="initial"
+      // whileInView="animate"
+      animate={isInView && "animate"}
       className="flex h-full flex-col justify-between text-white"
       style={{ background: "linear-gradient(180deg , #0c0c1d ,#111132)" }}
     >
-      <div className="flex basis-1/4 items-center gap-5 self-end">
+      <motion.div
+        variants={variants}
+        className="flex basis-1/4 items-center gap-5 self-end"
+      >
         <p className="text-right text-[20px] font-light">
           I focus on helping your brand grow <br /> and move forward
         </p>
         <hr className="w-[300px] border-[0.5px] border-gray-500" />
-      </div>
+      </motion.div>
 
       <div className="flex basis-1/2 flex-col items-center">
         <div className="flex items-center  gap-5">
@@ -21,7 +51,7 @@ const Services = () => {
           />
           <h1 className="text-[96px] font-thin">
             {" "}
-            <b className="font-bold">Unique</b> Ideas
+            <b className="font-bold hover:text-orange-400">Unique</b> Ideas
           </h1>
         </div>
         <div className="flex items-center gap-5">
@@ -35,7 +65,10 @@ const Services = () => {
         </div>
       </div>
 
-      <motion.div className="container flex basis-1/2 gap-5">
+      <motion.div
+        className="container flex basis-1/2 gap-5"
+        variants={variants}
+      >
         {[1, 2, 3, 4].map((index) => (
           <motion.div
             //   whileHover={{ background: "lightgray", color: "white" }}
